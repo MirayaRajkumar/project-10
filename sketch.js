@@ -9,6 +9,7 @@ function setup(){
   sea = createSprite(200,200,400,400);
   sea.addAnimation("sea",seaImage);
   sea.scale = 0.5;
+  sea.velocityX = 2;
   ship = createSprite(250,250);
   ship.addAnimation("ship",shipAnimation);
   ship.scale = 0.2;
@@ -16,5 +17,8 @@ function setup(){
 
 function draw() {
   background("blue");
+  if(sea.x > 1000){
+    sea.x = 0;
+  }
   drawSprites();
 }
